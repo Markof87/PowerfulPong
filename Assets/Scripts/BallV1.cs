@@ -3,33 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Ball : MonoBehaviour
+public class BallV1 : MonoBehaviour
 {
     private Rigidbody rigidbody;
     private AudioSource audioSource;
 
     private int scoreLeft;
     private int scoreRight;
-    private int scoreUp;
-    private int scoreDown;
 
     public Text scoreTextLeft;
     public Text scoreTextRight;
-    public Text winText;
 
     void Start()
     {
         scoreLeft = 0;
         scoreRight = 0;
-        scoreUp = 0;
-        scoreDown = 0;
-
         audioSource = GetComponent<AudioSource>();
         rigidbody = GetComponent<Rigidbody>();
-        
-        if(winText.enabled)
-            winText.enabled = false;
-
         StartCoroutine(StartBall());
     }
 
