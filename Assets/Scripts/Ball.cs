@@ -13,29 +13,32 @@ public class Ball : MonoBehaviour
     private int scoreUp;
     private int scoreDown;
 
+    [SerializeField]
+    private int maxScore;
+
     public Text scoreTextLeft;
     public Text scoreTextRight;
     public Text winText;
 
     void Start()
     {
-        scoreLeft = 0;
-        scoreRight = 0;
-        scoreUp = 0;
-        scoreDown = 0;
+        ResetGame();
 
         audioSource = GetComponent<AudioSource>();
         rigidbody = GetComponent<Rigidbody>();
-        
-        if(winText.enabled)
-            winText.enabled = false;
 
         StartCoroutine(StartBall());
     }
 
     private IEnumerator StartBall()
     {
+        transform.position = Vector3.zero;
+
         yield return new WaitForSeconds(3f);
+
+        if (winText.IsActive())
+            winText.gameObject.SetActive(false);
+
         rigidbody.AddForce(Random.Range(6, 8), Random.Range(-4, -3), 0);
     }
 
@@ -58,13 +61,28 @@ public class Ball : MonoBehaviour
 
             rigidbody.velocity = Vector3.zero;
             rigidbody.angularVelocity = Vector3.zero;
-            transform.position = Vector3.zero;
-            StartCoroutine(StartBall());
+
+            if (scoreLeft == maxScore || scoreRight == maxScore || scoreUp == maxScore || scoreDown == maxScore)
+                winText.gameObject.SetActive(true);
+
+            else
+                StartCoroutine(StartBall());
         }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         audioSource.Play();
+    }
+
+    private void ResetGame()
+    {
+        scoreLeft = 0;
+        scoreRight = 0;
+        scoreUp = 0;
+        scoreDown = 0;
+
+        scoreTextLeft.text = scoreLeft.ToString();
+        scoreTextRight.text = scoreRight.ToString();
     }
 }
