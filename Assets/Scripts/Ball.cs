@@ -14,7 +14,10 @@ public class Ball : MonoBehaviour
     private int scoreDown;
 
     [SerializeField]
-    private int maxScore;
+    private int maxScore = 11;
+
+    [SerializeField]
+    private float initialVelocity = 5.0f;
 
     public Text scoreTextLeft;
     public Text scoreTextRight;
@@ -39,7 +42,26 @@ public class Ball : MonoBehaviour
         if (winText.IsActive())
             winText.gameObject.SetActive(false);
 
-        rigidbody.AddForce(Random.Range(6, 8), Random.Range(-4, -3), 0);
+        AddForceBall();
+    }
+
+    private void AddForceBall()
+    {
+        float randomX = 0;
+        float randomY = 0;
+
+        if (Random.value < 0.5f)
+            randomX = Random.Range(-5, -3);
+        else
+            randomX = Random.Range(3, 5);
+
+        if (randomX <= -3)
+            randomY = -Mathf.Sqrt(Mathf.Pow(initialVelocity, 2) - Mathf.Pow(randomX, 2));
+        else
+            randomY = Mathf.Sqrt(Mathf.Pow(initialVelocity, 2) - Mathf.Pow(randomX, 2));
+
+        Vector3 randomStart = new Vector3(randomX, randomY, 0);
+        rigidbody.AddForce(randomStart);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -72,6 +94,7 @@ public class Ball : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        //On every collision I have to count the total amount. If i reach 4, 12 and 20 hits, my ball is more quick by a bit
         audioSource.Play();
     }
 
