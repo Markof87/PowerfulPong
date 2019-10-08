@@ -5,13 +5,15 @@ using UnityEngine.UI;
 
 public class Ball : MonoBehaviour
 {
-    private Rigidbody rigidbody;
+    private Rigidbody rb;
     private AudioSource audioSource;
 
     private int scoreLeft;
     private int scoreRight;
     private int scoreUp;
     private int scoreDown;
+
+    private int totalHit = 0;
 
     [SerializeField]
     private int maxScore = 11;
@@ -28,7 +30,7 @@ public class Ball : MonoBehaviour
         ResetGame();
 
         audioSource = GetComponent<AudioSource>();
-        rigidbody = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
 
         StartCoroutine(StartBall());
     }
@@ -36,6 +38,7 @@ public class Ball : MonoBehaviour
     private IEnumerator StartBall()
     {
         transform.position = Vector3.zero;
+        totalHit = 0;
 
         yield return new WaitForSeconds(3f);
 
@@ -61,7 +64,7 @@ public class Ball : MonoBehaviour
             randomY = Mathf.Sqrt(Mathf.Pow(initialVelocity, 2) - Mathf.Pow(randomX, 2));
 
         Vector3 randomStart = new Vector3(randomX, randomY, 0);
-        rigidbody.AddForce(randomStart);
+        rb.AddForce(randomStart);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -81,8 +84,8 @@ public class Ball : MonoBehaviour
                 scoreTextLeft.text = scoreLeft.ToString();
             }
 
-            rigidbody.velocity = Vector3.zero;
-            rigidbody.angularVelocity = Vector3.zero;
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
 
             if (scoreLeft == maxScore || scoreRight == maxScore || scoreUp == maxScore || scoreDown == maxScore)
                 winText.gameObject.SetActive(true);
@@ -94,8 +97,40 @@ public class Ball : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        //On every collision I have to count the total amount. If i reach 4, 12 and 20 hits, my ball is more quick by a bit
         audioSource.Play();
+
+        //On every collision I have to count the total amount. If i reach 4, 12 and 20 hits, my ball is more quick by a bit
+
+        if(collision.gameObject.tag == "Paddle")
+        {
+            totalHit++;
+            if(totalHit == 4)
+            {
+                if(rb.velocity.x <= 0)
+                    rb.velocity = new Vector3(rb.velocity.x - 5.0f, rb.velocity.y, 0);
+                else
+                    rb.velocity = new Vector3(rb.velocity.x + 5.0f, rb.velocity.y, 0);
+            }
+
+
+            if(totalHit == 12)
+            {
+                if(rb.velocity.x <= 0)
+                    rb.velocity = new Vector3(rb.velocity.x - 10.0f, rb.velocity.y, 0);
+                else
+                    rb.velocity = new Vector3(rb.velocity.x + 10.0f, rb.velocity.y, 0);
+            }
+
+            if(totalHit == 20)
+            {
+                if(rb.velocity.x <= 0)
+                    rb.velocity = new Vector3(rb.velocity.x - 20.0f, rb.velocity.y, 0);
+                else
+                    rb.velocity = new Vector3(rb.velocity.x + 20.0f, rb.velocity.y, 0);    
+            }
+        }
+
+
     }
 
     private void ResetGame()
