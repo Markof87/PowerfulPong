@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Ball : MonoBehaviour
+public class BallV2 : MonoBehaviour
 {
     private Rigidbody rb;
     private AudioSource audioSource;
@@ -100,6 +100,7 @@ public class Ball : MonoBehaviour
         audioSource.Play();
 
         //On every collision I have to count the total amount. If i reach 4, 12 and 20 hits, my ball is more quick by a bit
+
         if(collision.gameObject.tag == "Paddle")
         {
             totalHit++;

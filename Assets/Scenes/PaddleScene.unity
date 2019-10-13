@@ -1226,6 +1226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxScore: 11
+  initialVelocity: 5
   scoreTextLeft: {fileID: 1139417047}
   scoreTextRight: {fileID: 2077137672}
   winText: {fileID: 1091179840}
