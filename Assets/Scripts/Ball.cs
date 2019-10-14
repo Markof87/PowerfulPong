@@ -1,34 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Ball : MonoBehaviour
 {
     private Rigidbody rb;
     private AudioSource audioSource;
 
-    private int scoreLeft;
-    private int scoreRight;
-    private int scoreUp;
-    private int scoreDown;
-
     private int totalHit = 0;
-
-    [SerializeField]
-    private int maxScore = 11;
 
     [SerializeField]
     private float initialVelocity = 5.0f;
 
-    public Text scoreTextLeft;
-    public Text scoreTextRight;
-    public Text winText;
-
     void Start()
     {
-        ResetGame();
-
         audioSource = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody>();
 
@@ -42,9 +27,7 @@ public class Ball : MonoBehaviour
 
         yield return new WaitForSeconds(3f);
 
-        if (winText.IsActive())
-            winText.gameObject.SetActive(false);
-
+        GameManager.instance.ToggleWinText(false);
         AddForceBall();
     }
 
@@ -73,22 +56,16 @@ public class Ball : MonoBehaviour
         {
 
             if (other.gameObject.name == "BoundaryLeft")
-            {
-                scoreRight++;
-                scoreTextRight.text = scoreRight.ToString();
-            }
+                GameManager.instance.IncrementScore(GameManager.ScoreType.Right);
 
             if (other.gameObject.name == "BoundaryRight")
-            {
-                scoreLeft++;
-                scoreTextLeft.text = scoreLeft.ToString();
-            }
+                GameManager.instance.IncrementScore(GameManager.ScoreType.Left);
 
             rb.velocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
 
-            if (scoreLeft == maxScore || scoreRight == maxScore || scoreUp == maxScore || scoreDown == maxScore)
-                winText.gameObject.SetActive(true);
+            if (GameManager.instance.scoreLeft == GameManager.instance.maxScore || GameManager.instance.scoreRight == GameManager.instance.maxScore || GameManager.instance.scoreUp == GameManager.instance.maxScore || GameManager.instance.scoreDown == GameManager.instance.maxScore)
+                GameManager.instance.ToggleWinText(true);
 
             else
                 StartCoroutine(StartBall());
@@ -129,17 +106,5 @@ public class Ball : MonoBehaviour
             }
         }
 
-
-    }
-
-    private void ResetGame()
-    {
-        scoreLeft = 0;
-        scoreRight = 0;
-        scoreUp = 0;
-        scoreDown = 0;
-
-        scoreTextLeft.text = scoreLeft.ToString();
-        scoreTextRight.text = scoreRight.ToString();
     }
 }
