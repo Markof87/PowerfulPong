@@ -10,17 +10,29 @@ public class GameManager : MonoBehaviour
         Left, Right, Up, Down
     }
 
+    public enum GameState
+    {
+        FETCH, RUNNING, PAUSED, FINISHED
+    }
+
     public static GameManager instance = null;
 
-    public int scoreLeft;
-    public int scoreRight;
-    public int scoreUp;
-    public int scoreDown;
-    public int maxScore = 11;
+    private int scoreLeft;
+    private int scoreRight;
+    private int scoreUp;
+    private int scoreDown;
+    private int maxScore = 11;
 
-    public Text scoreTextLeft;
-    public Text scoreTextRight;
-    public Text winText;
+    [SerializeField]
+    private Text scoreTextLeft;
+    [SerializeField]
+    private Text scoreTextRight;
+    [SerializeField]
+    private Text scoreTextUp;
+    [SerializeField]
+    private Text scoreTextDown;
+    [SerializeField]
+    private Text winText;
 
     void Awake()
     {
@@ -55,6 +67,8 @@ public class GameManager : MonoBehaviour
 
         scoreTextLeft.text = scoreLeft.ToString();
         scoreTextRight.text = scoreRight.ToString();
+        scoreTextUp.text = scoreUp.ToString();
+        scoreTextDown.text = scoreDown.ToString();
     }
 
     public void IncrementScore(ScoreType score)
@@ -73,13 +87,23 @@ public class GameManager : MonoBehaviour
                 
             case ScoreType.Up:
                 scoreUp++;
-                //scoreTextUp.text = scoreUp.ToString();
+                scoreTextUp.text = scoreUp.ToString();
                 break;
 
             case ScoreType.Down:
                 scoreDown++;
-                //scoreTextDown.text = scoreDown.ToString();
+                scoreTextDown.text = scoreDown.ToString();
                 break;
         }
+    }
+
+    public bool WinCondition()
+    {
+        bool hasWin = (scoreLeft == maxScore || scoreRight == maxScore || scoreUp == maxScore || scoreDown == maxScore);
+            
+        if(hasWin)
+            ToggleWinText(true);
+
+        return hasWin;
     }
 }

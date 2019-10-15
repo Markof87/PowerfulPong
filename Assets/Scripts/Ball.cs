@@ -64,10 +64,7 @@ public class Ball : MonoBehaviour
             rb.velocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
 
-            if (GameManager.instance.scoreLeft == GameManager.instance.maxScore || GameManager.instance.scoreRight == GameManager.instance.maxScore || GameManager.instance.scoreUp == GameManager.instance.maxScore || GameManager.instance.scoreDown == GameManager.instance.maxScore)
-                GameManager.instance.ToggleWinText(true);
-
-            else
+            if(!GameManager.instance.WinCondition())
                 StartCoroutine(StartBall());
         }
     }
@@ -79,6 +76,9 @@ public class Ball : MonoBehaviour
         //On every collision I have to count the total amount. If i reach 4, 12 and 20 hits, my ball is more quick by a bit
         if(collision.gameObject.tag == "Paddle")
         {
+
+            ManageDeflection(collision);
+
             totalHit++;
             if(totalHit == 4)
             {
@@ -106,5 +106,15 @@ public class Ball : MonoBehaviour
             }
         }
 
+    }
+
+    private void ManageDeflection(Collision collision)
+    {
+        float differencePosition = collision.transform.position.y - transform.position.y;
+
+        //If the difference between paddle position and ball position is less than zero, the ball is a bit higher
+        //if (differencePosition < 0)
+        //    rb.AddForce(1.0f * differencePosition);
+        Debug.Log(collision.transform.position.y - transform.position.y);
     }
 }

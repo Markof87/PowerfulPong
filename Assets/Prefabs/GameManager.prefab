@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 450383708406382012}
   - component: {fileID: 1113688158531266701}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,11 +43,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7209060443fe4ef44a80c154665f09db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreLeft: 0
-  scoreRight: 0
-  scoreUp: 0
-  scoreDown: 0
-  maxScore: 11
-  scoreTextLeft: {fileID: 0}
-  scoreTextRight: {fileID: 0}
-  winText: {fileID: 0}
+  scoreTextLeft: {fileID: 5539471613299432216, guid: 32ea73a574b062d4789f53915272ec5a,
+    type: 3}
+  scoreTextRight: {fileID: 8659499447228446547, guid: 9383bd58d7abd5246a2b99665e20fdd7,
+    type: 3}
+  scoreTextUp: {fileID: 1766612869951601430, guid: 3ef53e17bd07e81419da4aab29c5b9a7,
+    type: 3}
+  scoreTextDown: {fileID: 7794844798653584253, guid: 018525b8b4363c64083de0df3243745e,
+    type: 3}
+  winText: {fileID: 7167675811759951816, guid: 003594585718ab34385e9cd24502b24b, type: 3}

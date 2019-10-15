@@ -3,58 +3,61 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BallV1 : MonoBehaviour
+namespace BallV1
 {
-    private Rigidbody rigidbody;
-    private AudioSource audioSource;
-
-    private int scoreLeft;
-    private int scoreRight;
-
-    public Text scoreTextLeft;
-    public Text scoreTextRight;
-
-    void Start()
+    public class Ball : MonoBehaviour
     {
-        scoreLeft = 0;
-        scoreRight = 0;
-        audioSource = GetComponent<AudioSource>();
-        rigidbody = GetComponent<Rigidbody>();
-        StartCoroutine(StartBall());
-    }
+        private Rigidbody rigidbody;
+        private AudioSource audioSource;
 
-    private IEnumerator StartBall()
-    {
-        yield return new WaitForSeconds(3f);
-        rigidbody.AddForce(Random.Range(6, 8), Random.Range(-4, -3), 0);
-    }
+        private int scoreLeft;
+        private int scoreRight;
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Boundary")
+        public Text scoreTextLeft;
+        public Text scoreTextRight;
+
+        void Start()
         {
-
-            if (other.gameObject.name == "BoundaryLeft")
-            {
-                scoreRight++;
-                scoreTextRight.text = scoreRight.ToString();
-            }
-
-            if (other.gameObject.name == "BoundaryRight")
-            {
-                scoreLeft++;
-                scoreTextLeft.text = scoreLeft.ToString();
-            }
-
-            rigidbody.velocity = Vector3.zero;
-            rigidbody.angularVelocity = Vector3.zero;
-            transform.position = Vector3.zero;
+            scoreLeft = 0;
+            scoreRight = 0;
+            audioSource = GetComponent<AudioSource>();
+            rigidbody = GetComponent<Rigidbody>();
             StartCoroutine(StartBall());
         }
-    }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        audioSource.Play();
+        private IEnumerator StartBall()
+        {
+            yield return new WaitForSeconds(3f);
+            rigidbody.AddForce(Random.Range(6, 8), Random.Range(-4, -3), 0);
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.tag == "Boundary")
+            {
+
+                if (other.gameObject.name == "BoundaryLeft")
+                {
+                    scoreRight++;
+                    scoreTextRight.text = scoreRight.ToString();
+                }
+
+                if (other.gameObject.name == "BoundaryRight")
+                {
+                    scoreLeft++;
+                    scoreTextLeft.text = scoreLeft.ToString();
+                }
+
+                rigidbody.velocity = Vector3.zero;
+                rigidbody.angularVelocity = Vector3.zero;
+                transform.position = Vector3.zero;
+                StartCoroutine(StartBall());
+            }
+        }
+
+        private void OnCollisionEnter(Collision collision)
+        {
+            audioSource.Play();
+        }
     }
 }

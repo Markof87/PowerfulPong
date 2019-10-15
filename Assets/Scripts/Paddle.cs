@@ -37,17 +37,17 @@ public class Paddle : MonoBehaviour
     }
 
     private void FirstPlayer(){
-        if (Input.GetKey("w"))
+        if (Input.GetKey("w") && transform.position.y < 12f)
             transform.Translate(0, 20 * Time.deltaTime, 0);
 
-        if (Input.GetKey("s"))
+        if (Input.GetKey("s") && transform.position.y > -12f)
             transform.Translate(0, -20 * Time.deltaTime, 0);
     }
     private void SecondPlayer(){
-        if (Input.GetKey("up"))
+        if (Input.GetKey("up") && transform.position.y < 12f)
             transform.Translate(0, 20 * Time.deltaTime, 0);
 
-        if (Input.GetKey("down"))
+        if (Input.GetKey("down") && transform.position.y > -12f)
             transform.Translate(0, -20 * Time.deltaTime, 0);
     }
     private void ThirdPlayer(){
