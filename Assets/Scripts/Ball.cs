@@ -31,15 +31,15 @@ public class Ball : MonoBehaviour
         AddForceBall();
     }
 
-    private void AddForceBall()
+    public void AddForceBall()
     {
         float randomX = 0;
         float randomY = 0;
 
         if (Random.value < 0.5f)
-            randomX = Random.Range(-5, -3);
+            randomX = Random.Range(-4, -3);
         else
-            randomX = Random.Range(3, 5);
+            randomX = Random.Range(3, 4);
 
         if (randomX <= -3)
             randomY = -Mathf.Sqrt(Mathf.Pow(initialVelocity, 2) - Mathf.Pow(randomX, 2));
@@ -60,6 +60,12 @@ public class Ball : MonoBehaviour
 
             if (other.gameObject.name == "BoundaryRight")
                 GameManager.instance.IncrementScore(GameManager.ScoreType.Left);
+
+            if (other.gameObject.name == "BoundaryUp")
+                GameManager.instance.IncrementScore(GameManager.ScoreType.Up);
+
+            if (other.gameObject.name == "BoundaryDown")
+                GameManager.instance.IncrementScore(GameManager.ScoreType.Down);
 
             rb.velocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
@@ -112,9 +118,7 @@ public class Ball : MonoBehaviour
     {
         float differencePosition = collision.transform.position.y - transform.position.y;
 
-        //If the difference between paddle position and ball position is less than zero, the ball is a bit higher
-        //if (differencePosition < 0)
-        //    rb.AddForce(1.0f * differencePosition);
-        Debug.Log(collision.transform.position.y - transform.position.y);
+        Vector3 dir = Quaternion.AngleAxis(60 * differencePosition, Vector3.forward) * Vector3.left;
+        rb.AddForce(dir * 1.0f);
     }
 }

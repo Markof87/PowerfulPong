@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour
         switch(score)
         {
             case ScoreType.Left:
-                scoreLeft++;
+                scoreLeft++; 
                 scoreTextLeft.text = scoreLeft.ToString();
                 break;
 
