@@ -17,10 +17,7 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance = null;
 
-    private int scoreLeft;
-    private int scoreRight;
-    private int scoreUp;
-    private int scoreDown;
+    private int scoreLeft, scoreRight, scoreUp, scoreDown;
     private int maxScore = 11;
 
     [SerializeField]

@@ -8,6 +8,7 @@ TagManager:
   - Ball
   - Paddle
   - Container
+  - ActionIcon
   layers:
   - Default
   - TransparentFX

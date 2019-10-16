@@ -244,7 +244,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &4798192461534844791
 PrefabInstance:
@@ -365,7 +365,7 @@ PrefabInstance:
     - target: {fileID: 5728191757776394709, guid: aa2e640d0986c164bafbd93e82f14c40,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5728191757776394709, guid: aa2e640d0986c164bafbd93e82f14c40,
         type: 3}
@@ -434,7 +434,7 @@ PrefabInstance:
     - target: {fileID: 5963275369006395358, guid: 45a3cd4b224c40c4d9e0b178774b119e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5963275369006395358, guid: 45a3cd4b224c40c4d9e0b178774b119e,
         type: 3}
@@ -518,7 +518,7 @@ PrefabInstance:
     - target: {fileID: 7161795912190070292, guid: 11b07a41ecaf22842a1bd05b7c57ede9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7161795912190070292, guid: 11b07a41ecaf22842a1bd05b7c57ede9,
         type: 3}
@@ -585,16 +585,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5595046084061227839, guid: 11b07a41ecaf22842a1bd05b7c57ede9,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6370938445366158376, guid: 11b07a41ecaf22842a1bd05b7c57ede9,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11b07a41ecaf22842a1bd05b7c57ede9, type: 3}
 --- !u!1001 &7865129181992810731
@@ -647,7 +637,7 @@ PrefabInstance:
     - target: {fileID: 7865129181872207667, guid: 565870e7d0874b0439bae23bf9359179,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7865129181872207667, guid: 565870e7d0874b0439bae23bf9359179,
         type: 3}
@@ -716,7 +706,7 @@ PrefabInstance:
     - target: {fileID: 450383708406382012, guid: ddd68543772e5e84f83274d1fb8994af,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 450383708406382012, guid: ddd68543772e5e84f83274d1fb8994af,
         type: 3}
