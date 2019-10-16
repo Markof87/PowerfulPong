@@ -6,6 +6,7 @@ public class Ball : MonoBehaviour
 {
     private Rigidbody rb;
     private AudioSource audioSource;
+    private Paddle lastHit = null;
 
     private int totalHit = 0;
 
@@ -82,7 +83,7 @@ public class Ball : MonoBehaviour
         //On every collision I have to count the total amount. If i reach 4, 12 and 20 hits, my ball is more quick by a bit
         if(collision.gameObject.tag == "Paddle")
         {
-
+            lastHit = collision.gameObject.GetComponent<Paddle>();
             ManageDeflection(collision);
 
             totalHit++;
@@ -111,14 +112,18 @@ public class Ball : MonoBehaviour
                     rb.velocity = new Vector3(rb.velocity.x + 20.0f, rb.velocity.y, 0);    
             }
         }
-
     }
 
     private void ManageDeflection(Collision collision)
     {
         float differencePosition = collision.transform.position.y - transform.position.y;
 
-        Vector3 dir = Quaternion.AngleAxis(60 * differencePosition, Vector3.forward) * Vector3.left;
+        Vector3 dir = Quaternion.AngleAxis(60 * differencePosition, Vector3.forward) * Vector3.right;
         rb.AddForce(dir * 1.0f);
+    }
+
+    public Paddle GetLastHit()
+    {
+        return lastHit;
     }
 }

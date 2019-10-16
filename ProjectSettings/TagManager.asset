@@ -7,6 +7,7 @@ TagManager:
   - Boundary
   - Ball
   - Paddle
+  - Container
   layers:
   - Default
   - TransparentFX
