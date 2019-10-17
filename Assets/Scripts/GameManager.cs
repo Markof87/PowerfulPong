@@ -31,6 +31,13 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private Text winText;
 
+    [SerializeField]
+    private Container containerToSpawn;
+    [SerializeField]
+    private float containerSpawnerPeriod;
+    private float containerSpawnerTime;
+    private float containerSpawnerSelectedTime;
+
     void Awake()
     {
         //Check if instance already exists
@@ -49,6 +56,19 @@ public class GameManager : MonoBehaviour
         ResetGame();
     }
 
+    void Update()
+    {
+        if(containerSpawnerSelectedTime == 0)
+            containerSpawnerSelectedTime = Random.Range(5.0f, containerSpawnerPeriod);
+
+        containerSpawnerTime += Time.deltaTime;
+        if(containerSpawnerTime >= containerSpawnerSelectedTime)
+        {
+            ResetSpawnTime();
+            SpawnContainer();
+        }
+    }
+
     public void ToggleWinText(bool isActive)
     {
         if (winText.IsActive() != isActive)
@@ -57,6 +77,8 @@ public class GameManager : MonoBehaviour
 
     public void ResetGame()
     {
+        ResetSpawnTime();
+
         scoreLeft = 0;
         scoreRight = 0;
         scoreUp = 0;
@@ -68,8 +90,15 @@ public class GameManager : MonoBehaviour
         scoreTextDown.text = scoreDown.ToString();
     }
 
+    private void ResetSpawnTime()
+    {
+        containerSpawnerTime = 0;
+        containerSpawnerSelectedTime = 0;
+    }
+
     public void IncrementScore(ScoreType score)
     {
+        DeleteAll();
         switch(score)
         {
             case ScoreType.Left:
@@ -102,5 +131,20 @@ public class GameManager : MonoBehaviour
             ToggleWinText(true);
 
         return hasWin;
+    }
+
+    private void SpawnContainer()
+    {
+        Instantiate(containerToSpawn, Vector3.zero, Quaternion.identity);
+    }
+
+    private void DeleteAll()
+    {
+        ResetSpawnTime();
+        foreach (Container container in FindObjectsOfType<Container>())
+            Destroy(container.gameObject);
+
+        foreach (Pill pill in FindObjectsOfType<Pill>())
+            Destroy(pill.gameObject);
     }
 }

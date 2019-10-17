@@ -29,8 +29,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4798192462036295932}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.11, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -106,7 +106,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b2afaa6df092964fbe221eef060b0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pill: {fileID: 867093356401073014, guid: 361e4e03c88205f47b0b74ecd65c5125, type: 3}
+  pills:
+  - {fileID: 1872914072646159628, guid: 5c5f2949b53ca0e498e73faf8fbe715e, type: 3}
+  - {fileID: 620235395121093168, guid: d7c3a22246ae8924d98877fb3f8358b9, type: 3}
+  containerVelocity: 5
+  containerDestroyPeriod: 10
 --- !u!54 &4638926107620687824
 Rigidbody:
   m_ObjectHideFlags: 0

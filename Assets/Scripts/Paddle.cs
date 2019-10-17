@@ -11,6 +11,9 @@ public class Paddle : MonoBehaviour
 
     public PlayerType type;
 
+    [SerializeField]
+    private GameObject actionIcon;
+
     void Update()
     {
         switch(type){
@@ -58,5 +61,10 @@ public class Paddle : MonoBehaviour
     }
     private void AIPlayer(){
         
+    }
+
+    public GameObject GetActionIcon()
+    {
+        return actionIcon;
     }
 }

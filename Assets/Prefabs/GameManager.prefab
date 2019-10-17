@@ -48,3 +48,6 @@ MonoBehaviour:
   scoreTextUp: {fileID: 0}
   scoreTextDown: {fileID: 0}
   winText: {fileID: 0}
+  containerToSpawn: {fileID: 4798192462036295911, guid: d22998ab41d047442a6d82c79799c48d,
+    type: 3}
+  containerSpawnerPeriod: 30

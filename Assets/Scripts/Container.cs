@@ -5,7 +5,44 @@ using UnityEngine;
 public class Container : MonoBehaviour
 {
     [SerializeField]
-    private GameObject pill;
+    private GameObject[] pills;
+    [SerializeField]
+    private float containerVelocity;
+    private Vector3 containerDirection;
+    [SerializeField]
+    private float containerDestroyPeriod;
+    private float containerDestroyTime;
+    private float containerDestroySelectedTime;
+
+    private void Start()
+    {
+        if(Random.value < 0.5f)
+            containerDirection = Vector3.up;
+        else
+            containerDirection = Vector3.down;
+    }
+
+    private void Update()
+    {
+        ContainerMovement();
+
+        if(containerDestroySelectedTime == 0)
+            containerDestroySelectedTime = Random.Range(5.0f, containerDestroyPeriod);
+
+        containerDestroyTime += Time.deltaTime;
+        if(containerDestroyTime >= containerDestroySelectedTime)
+            Destroy(gameObject);
+    }
+
+    private void ContainerMovement()
+    {
+        if (transform.position.y >= 12f)
+            containerDirection = Vector3.down;
+        if(transform.position.y <= -12f)
+            containerDirection = Vector3.up;
+
+        transform.Translate(containerDirection * containerVelocity * Time.deltaTime);
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -14,6 +51,12 @@ public class Container : MonoBehaviour
             Destroy(gameObject);
             GeneratePill(other.gameObject.GetComponent<Ball>().GetLastHit());
         }
+    }
+
+    private void ResetDestroyTime()
+    {
+        containerDestroyTime = 0;
+        containerDestroySelectedTime = 0;
     }
 
     private void GeneratePill(Paddle lastHit)
@@ -43,7 +86,8 @@ public class Container : MonoBehaviour
                 break;
         }
 
-        GameObject instantiatedPill = Instantiate(pill, pillPosition, Quaternion.identity);
+        int pillSeed = Random.Range(0, pills.Length);
+        GameObject instantiatedPill = Instantiate(pills[pillSeed], pillPosition, Quaternion.identity);
         instantiatedPill.GetComponent<Rigidbody>().AddForce(pillForce * 500f);
     }
 }

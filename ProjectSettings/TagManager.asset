@@ -9,6 +9,8 @@ TagManager:
   - Paddle
   - Container
   - ActionIcon
+  - BiggerPill
+  - IcePill
   layers:
   - Default
   - TransparentFX
