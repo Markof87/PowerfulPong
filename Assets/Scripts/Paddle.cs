@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Paddle : MonoBehaviour
 {
@@ -45,6 +46,10 @@ public class Paddle : MonoBehaviour
 
         if (Input.GetKey("s") && transform.position.y > -12f)
             transform.Translate(0, -20 * Time.deltaTime, 0);
+
+        if (Input.GetKey("e"))
+            ActionBehaviour(); 
+
     }
     private void SecondPlayer(){
         if (Input.GetKey("up") && transform.position.y < 12f)
@@ -52,6 +57,9 @@ public class Paddle : MonoBehaviour
 
         if (Input.GetKey("down") && transform.position.y > -12f)
             transform.Translate(0, -20 * Time.deltaTime, 0);
+    
+        if (Input.GetKey(KeyCode.Return))
+            ActionBehaviour(); 
     }
     private void ThirdPlayer(){
         
@@ -66,5 +74,17 @@ public class Paddle : MonoBehaviour
     public GameObject GetActionIcon()
     {
         return actionIcon;
+    }
+
+    private void ActionBehaviour()
+    {
+        if(actionIcon.GetComponent<Image>().sprite != null)
+        {
+            string iconName = actionIcon.GetComponent<Image>().sprite.name;
+            Debug.Log(iconName); 
+            actionIcon.GetComponent<Image>().sprite = null;
+
+            //TODO: delegato per chiamare l'azione corretta
+        }
     }
 }
