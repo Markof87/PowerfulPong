@@ -9,6 +9,7 @@ public class Ball : MonoBehaviour
     private Paddle lastHit = null;
 
     private int totalHit = 0;
+    private bool isMoving = false;
 
     [SerializeField]
     private float initialVelocity = 5.0f;
@@ -23,6 +24,7 @@ public class Ball : MonoBehaviour
 
     private IEnumerator StartBall()
     {
+        isMoving = false;
         transform.position = Vector3.zero;
         totalHit = 0;
 
@@ -30,6 +32,7 @@ public class Ball : MonoBehaviour
 
         GameManager.instance.ToggleWinText(false);
         AddForceBall();
+        isMoving = true;
     }
 
     public void AddForceBall()
@@ -49,6 +52,14 @@ public class Ball : MonoBehaviour
 
         Vector3 randomStart = new Vector3(randomX, randomY, 0);
         rb.AddForce(randomStart);
+    }
+
+    public bool IsMoving
+    {
+        get
+        {
+            return isMoving;
+        }
     }
 
     private void OnTriggerEnter(Collider other)

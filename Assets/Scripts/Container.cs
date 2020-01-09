@@ -61,7 +61,7 @@ public class Container : MonoBehaviour
 
     private void GeneratePill(Paddle lastHit)
     {
-        Vector3 pillPosition, pillForce, pillAngularForce;
+        Vector3 pillPosition, pillForce;
         switch (lastHit.type)
         {
             case Paddle.PlayerType.Player1:

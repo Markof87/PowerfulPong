@@ -334,11 +334,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5728191757776394710, guid: aa2e640d0986c164bafbd93e82f14c40,
-        type: 3}
-      propertyPath: m_Name
-      value: Boundaries
-      objectReference: {fileID: 0}
     - target: {fileID: 5728191757776394709, guid: aa2e640d0986c164bafbd93e82f14c40,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -394,6 +389,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5728191757776394710, guid: aa2e640d0986c164bafbd93e82f14c40,
+        type: 3}
+      propertyPath: m_Name
+      value: Boundaries
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa2e640d0986c164bafbd93e82f14c40, type: 3}
 --- !u!1001 &5963275369064794939
@@ -403,11 +403,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5963275369006395359, guid: 45a3cd4b224c40c4d9e0b178774b119e,
-        type: 3}
-      propertyPath: m_Name
-      value: Environment
-      objectReference: {fileID: 0}
     - target: {fileID: 5963275369006395358, guid: 45a3cd4b224c40c4d9e0b178774b119e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -463,21 +458,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5963275367102531383, guid: 45a3cd4b224c40c4d9e0b178774b119e,
+    - target: {fileID: 5963275369006395359, guid: 45a3cd4b224c40c4d9e0b178774b119e,
         type: 3}
-      propertyPath: scoreTextLeft
-      value: 
-      objectReference: {fileID: 1139417047}
-    - target: {fileID: 5963275367102531383, guid: 45a3cd4b224c40c4d9e0b178774b119e,
-        type: 3}
-      propertyPath: scoreTextRight
-      value: 
-      objectReference: {fileID: 2077137672}
-    - target: {fileID: 5963275367102531383, guid: 45a3cd4b224c40c4d9e0b178774b119e,
-        type: 3}
-      propertyPath: winText
-      value: 
-      objectReference: {fileID: 1091179840}
+      propertyPath: m_Name
+      value: Environment
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45a3cd4b224c40c4d9e0b178774b119e, type: 3}
 --- !u!1001 &7161795911289424463
@@ -487,11 +472,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7161795912190070296, guid: 11b07a41ecaf22842a1bd05b7c57ede9,
-        type: 3}
-      propertyPath: m_Name
-      value: GUI
-      objectReference: {fileID: 0}
     - target: {fileID: 7161795912190070292, guid: 11b07a41ecaf22842a1bd05b7c57ede9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -597,6 +577,16 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7161795912190070296, guid: 11b07a41ecaf22842a1bd05b7c57ede9,
+        type: 3}
+      propertyPath: m_Name
+      value: GUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 7161795912190070296, guid: 11b07a41ecaf22842a1bd05b7c57ede9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11b07a41ecaf22842a1bd05b7c57ede9, type: 3}
 --- !u!1001 &7865129181992810731
@@ -606,11 +596,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7865129181872207676, guid: 565870e7d0874b0439bae23bf9359179,
+    - target: {fileID: 7865129181815355915, guid: 565870e7d0874b0439bae23bf9359179,
         type: 3}
-      propertyPath: m_Name
-      value: Paddles
-      objectReference: {fileID: 0}
+      propertyPath: actionIcon
+      value: 
+      objectReference: {fileID: 1266447148}
     - target: {fileID: 7865129181872207667, guid: 565870e7d0874b0439bae23bf9359179,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -666,11 +656,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7865129181815355915, guid: 565870e7d0874b0439bae23bf9359179,
+    - target: {fileID: 7865129181872207676, guid: 565870e7d0874b0439bae23bf9359179,
         type: 3}
-      propertyPath: actionIcon
-      value: 
-      objectReference: {fileID: 1266447148}
+      propertyPath: m_Name
+      value: Paddles
+      objectReference: {fileID: 0}
     - target: {fileID: 7865129182004350337, guid: 565870e7d0874b0439bae23bf9359179,
         type: 3}
       propertyPath: actionIcon
@@ -770,5 +760,10 @@ PrefabInstance:
       propertyPath: winText
       value: 
       objectReference: {fileID: 1091179840}
+    - target: {fileID: 1113688158531266701, guid: ddd68543772e5e84f83274d1fb8994af,
+        type: 3}
+      propertyPath: isImproved
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddd68543772e5e84f83274d1fb8994af, type: 3}

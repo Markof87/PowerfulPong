@@ -43,6 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7209060443fe4ef44a80c154665f09db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isImproved: 1
   scoreTextLeft: {fileID: 0}
   scoreTextRight: {fileID: 0}
   scoreTextUp: {fileID: 0}
@@ -50,4 +51,4 @@ MonoBehaviour:
   winText: {fileID: 0}
   containerToSpawn: {fileID: 4798192462036295911, guid: d22998ab41d047442a6d82c79799c48d,
     type: 3}
-  containerSpawnerPeriod: 30
+  containerSpawnerPeriod: 15

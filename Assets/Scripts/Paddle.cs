@@ -13,6 +13,14 @@ public class Paddle : MonoBehaviour
     public PlayerType type;
 
     [SerializeField]
+    private Ball ball;
+
+    private void Start()
+    {
+        ball = GameObject.FindGameObjectWithTag("Ball").GetComponent<Ball>();
+    }
+
+    [SerializeField]
     private GameObject actionIcon;
 
     void Update()
@@ -78,7 +86,8 @@ public class Paddle : MonoBehaviour
 
     private void ActionBehaviour()
     {
-        if(actionIcon.GetComponent<Image>().sprite != null)
+
+        if(actionIcon.GetComponent<Image>().sprite != null && ball.IsMoving)
         {
             string iconName = actionIcon.GetComponent<Image>().sprite.name;
             Debug.Log(iconName); 

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public bool isImproved = true;
     public enum ScoreType
     {
         Left, Right, Up, Down
@@ -58,14 +59,17 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if(containerSpawnerSelectedTime == 0)
-            containerSpawnerSelectedTime = Random.Range(5.0f, containerSpawnerPeriod);
-
-        containerSpawnerTime += Time.deltaTime;
-        if(containerSpawnerTime >= containerSpawnerSelectedTime)
+        if (isImproved)
         {
-            ResetSpawnTime();
-            SpawnContainer();
+            if (containerSpawnerSelectedTime == 0)
+                containerSpawnerSelectedTime = Random.Range(5.0f, containerSpawnerPeriod);
+
+            containerSpawnerTime += Time.deltaTime;
+            if (containerSpawnerTime >= containerSpawnerSelectedTime)
+            {
+                ResetSpawnTime();
+                SpawnContainer();
+            }
         }
     }
 

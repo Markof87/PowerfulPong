@@ -66,9 +66,6 @@
     <Compile Include="Assets\Scripts\Ball.cs" />
     <Compile Include="Assets\Scripts\Container.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
-    <Compile Include="Assets\Scripts\OldScripts\BallV1.cs" />
-    <Compile Include="Assets\Scripts\OldScripts\BallV2.cs" />
-    <Compile Include="Assets\Scripts\OldScripts\BallV3.cs" />
     <Compile Include="Assets\Scripts\OldScripts\PaddleLeft.cs" />
     <Compile Include="Assets\Scripts\OldScripts\PaddleRight.cs" />
     <Compile Include="Assets\Scripts\Paddle.cs" />
