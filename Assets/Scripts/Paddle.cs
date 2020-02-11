@@ -19,6 +19,9 @@ public class Paddle : MonoBehaviour
     [SerializeField]
     private Ball ball;
 
+    [SerializeField]
+    private GameObject iceProjectile;
+
     private void Start()
     {
         ball = GameObject.FindGameObjectWithTag("Ball").GetComponent<Ball>();
@@ -93,13 +96,11 @@ public class Paddle : MonoBehaviour
         if(actionIcon.GetComponent<Image>().sprite != null && ball.IsMoving)
         {
             string iconName = actionIcon.GetComponent<Image>().sprite.name;
-            Debug.Log(iconName); 
             actionIcon.GetComponent<Image>().sprite = null;
-            OnActionBehaviour.Invoke(iconName);
-            //TODO: delegato per chiamare l'azione corretta
+            OnActionBehaviour.Invoke(iconName, this);
         }
     }
 
     [System.Serializable]
-    public class EventAction : UnityEvent<string> { }
+    public class EventAction : UnityEvent<string, Paddle> { }
 }

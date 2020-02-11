@@ -99,6 +99,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 900476149027916409, guid: be9c18fbfdda8be4aa8b6932d51bed73,
+        type: 3}
+      propertyPath: iceProjectile
+      value: 
+      objectReference: {fileID: 3375302131861856387, guid: 163be7f69d5ea854a8b58b6f6a2f4da4,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be9c18fbfdda8be4aa8b6932d51bed73, type: 3}
 --- !u!4 &7865129181815355957 stripped
@@ -114,11 +120,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7865129181872207667}
     m_Modifications:
-    - target: {fileID: 1621716842711674728, guid: 2258b74e0f3f64d4b91a04573fc96729,
-        type: 3}
-      propertyPath: m_Name
-      value: PaddleLeft
-      objectReference: {fileID: 0}
     - target: {fileID: 1621716842711674725, guid: 2258b74e0f3f64d4b91a04573fc96729,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -173,6 +174,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1621716842711674726, guid: 2258b74e0f3f64d4b91a04573fc96729,
+        type: 3}
+      propertyPath: iceProjectile
+      value: 
+      objectReference: {fileID: 3375302131861856387, guid: 163be7f69d5ea854a8b58b6f6a2f4da4,
+        type: 3}
+    - target: {fileID: 1621716842711674728, guid: 2258b74e0f3f64d4b91a04573fc96729,
+        type: 3}
+      propertyPath: m_Name
+      value: PaddleLeft
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2258b74e0f3f64d4b91a04573fc96729, type: 3}

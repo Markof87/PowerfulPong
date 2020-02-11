@@ -96,6 +96,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
+    m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -598,9 +599,40 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7865129181815355915, guid: 565870e7d0874b0439bae23bf9359179,
         type: 3}
+      propertyPath: OnActionBehaviour.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7865129181815355915, guid: 565870e7d0874b0439bae23bf9359179,
+        type: 3}
       propertyPath: actionIcon
       value: 
       objectReference: {fileID: 1266447148}
+    - target: {fileID: 7865129181815355915, guid: 565870e7d0874b0439bae23bf9359179,
+        type: 3}
+      propertyPath: OnActionBehaviour.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7865129181815355915, guid: 565870e7d0874b0439bae23bf9359179,
+        type: 3}
+      propertyPath: OnActionBehaviour.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7865129181815355915, guid: 565870e7d0874b0439bae23bf9359179,
+        type: 3}
+      propertyPath: OnActionBehaviour.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3864073742692307535, guid: 361e4e03c88205f47b0b74ecd65c5125,
+        type: 3}
+    - target: {fileID: 7865129181815355915, guid: 565870e7d0874b0439bae23bf9359179,
+        type: 3}
+      propertyPath: OnActionBehaviour.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ExecuteAction
+      objectReference: {fileID: 0}
+    - target: {fileID: 7865129181815355915, guid: 565870e7d0874b0439bae23bf9359179,
+        type: 3}
+      propertyPath: OnActionBehaviour.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7865129181872207667, guid: 565870e7d0874b0439bae23bf9359179,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -663,9 +695,40 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7865129182004350337, guid: 565870e7d0874b0439bae23bf9359179,
         type: 3}
+      propertyPath: OnActionBehaviour.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7865129182004350337, guid: 565870e7d0874b0439bae23bf9359179,
+        type: 3}
       propertyPath: actionIcon
       value: 
       objectReference: {fileID: 376646879}
+    - target: {fileID: 7865129182004350337, guid: 565870e7d0874b0439bae23bf9359179,
+        type: 3}
+      propertyPath: OnActionBehaviour.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7865129182004350337, guid: 565870e7d0874b0439bae23bf9359179,
+        type: 3}
+      propertyPath: OnActionBehaviour.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7865129182004350337, guid: 565870e7d0874b0439bae23bf9359179,
+        type: 3}
+      propertyPath: OnActionBehaviour.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3864073742692307535, guid: 361e4e03c88205f47b0b74ecd65c5125,
+        type: 3}
+    - target: {fileID: 7865129182004350337, guid: 565870e7d0874b0439bae23bf9359179,
+        type: 3}
+      propertyPath: OnActionBehaviour.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ExecuteAction
+      objectReference: {fileID: 0}
+    - target: {fileID: 7865129182004350337, guid: 565870e7d0874b0439bae23bf9359179,
+        type: 3}
+      propertyPath: OnActionBehaviour.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 565870e7d0874b0439bae23bf9359179, type: 3}
 --- !u!1001 &8431643576659767355
