@@ -1,10 +1,14 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class Paddle : MonoBehaviour
 {
+    public EventAction OnActionBehaviour;
+
     public enum PlayerType
     {
         Computer, Player1, Player2, Player3, Player4
@@ -86,14 +90,16 @@ public class Paddle : MonoBehaviour
 
     private void ActionBehaviour()
     {
-
         if(actionIcon.GetComponent<Image>().sprite != null && ball.IsMoving)
         {
             string iconName = actionIcon.GetComponent<Image>().sprite.name;
             Debug.Log(iconName); 
             actionIcon.GetComponent<Image>().sprite = null;
-
+            OnActionBehaviour.Invoke(iconName);
             //TODO: delegato per chiamare l'azione corretta
         }
     }
+
+    [System.Serializable]
+    public class EventAction : UnityEvent<string> { }
 }
