@@ -15,6 +15,11 @@ public class Paddle : MonoBehaviour
     }
 
     public PlayerType type;
+    public int speed = 20;
+    public int speedProjectile = 50;
+
+    private bool projectileInstantiated = false;
+    private GameObject iceProjectileSpawned = null;
 
     [SerializeField]
     private Ball ball;
@@ -53,14 +58,17 @@ public class Paddle : MonoBehaviour
                 AIPlayer();
                 break;
         }
+
+        if (projectileInstantiated)
+            MoveIceProjectile();
     }
 
     private void FirstPlayer(){
         if (Input.GetKey("w") && transform.position.y < 12f)
-            transform.Translate(0, 20 * Time.deltaTime, 0);
+            transform.Translate(0, speed * Time.deltaTime, 0);
 
         if (Input.GetKey("s") && transform.position.y > -12f)
-            transform.Translate(0, -20 * Time.deltaTime, 0);
+            transform.Translate(0, -speed * Time.deltaTime, 0);
 
         if (Input.GetKey("e"))
             ActionBehaviour(); 
@@ -68,10 +76,10 @@ public class Paddle : MonoBehaviour
     }
     private void SecondPlayer(){
         if (Input.GetKey("up") && transform.position.y < 12f)
-            transform.Translate(0, 20 * Time.deltaTime, 0);
+            transform.Translate(0, speed * Time.deltaTime, 0);
 
         if (Input.GetKey("down") && transform.position.y > -12f)
-            transform.Translate(0, -20 * Time.deltaTime, 0);
+            transform.Translate(0, -speed * Time.deltaTime, 0);
     
         if (Input.GetKey(KeyCode.Return))
             ActionBehaviour(); 
@@ -97,10 +105,52 @@ public class Paddle : MonoBehaviour
         {
             string iconName = actionIcon.GetComponent<Image>().sprite.name;
             actionIcon.GetComponent<Image>().sprite = null;
-            OnActionBehaviour.Invoke(iconName, this);
+            OnActionBehaviour.Invoke(iconName);
         }
     }
 
+    //N.B: I can do this pattern really better than that. But I think is enough for this little project
+    public void ExecuteAction(string pillName)
+    {
+        switch (pillName)
+        {
+            case "speed":
+                SpeedPillAction();
+                break;
+            case "ice":
+                IcePillAction();
+                break;
+        }
+    }
+
+    private void SpeedPillAction()
+    {
+        StartCoroutine(IncreaseSpeed());
+    }
+
+    private void IcePillAction()
+    {
+        ShotIceProjectile();
+    }
+
+    private IEnumerator IncreaseSpeed()
+    {
+        speed *= 2;
+        yield return new WaitForSeconds(10f);
+        speed /= 2;
+    }
+
+    private void ShotIceProjectile()
+    {
+        iceProjectileSpawned = Instantiate(iceProjectile, transform.position, transform.localRotation);
+        projectileInstantiated = true;
+    }
+
+    private void MoveIceProjectile()
+    {
+        iceProjectileSpawned.transform.Translate(transform.right * speedProjectile * Time.deltaTime);
+    }
+
     [System.Serializable]
-    public class EventAction : UnityEvent<string, Paddle> { }
+    public class EventAction : UnityEvent<string> { }
 }
