@@ -18,7 +18,6 @@ public class Paddle : MonoBehaviour
     public int speed = 20;
     public int speedProjectile = 50;
 
-    private bool projectileInstantiated = false;
     private GameObject iceProjectileSpawned = null;
 
     [SerializeField]
@@ -59,7 +58,7 @@ public class Paddle : MonoBehaviour
                 break;
         }
 
-        if (projectileInstantiated)
+        if (iceProjectileSpawned)
             MoveIceProjectile();
     }
 
@@ -123,6 +122,11 @@ public class Paddle : MonoBehaviour
         }
     }
 
+    public void HurtByIceProjectile()
+    {
+        StartCoroutine(FreezePaddle());
+    }
+
     private void SpeedPillAction()
     {
         StartCoroutine(IncreaseSpeed());
@@ -140,10 +144,17 @@ public class Paddle : MonoBehaviour
         speed /= 2;
     }
 
+    private IEnumerator FreezePaddle()
+    {
+        speed = 0;
+        yield return new WaitForSeconds(5f);
+        speed = 20;
+    }
+
     private void ShotIceProjectile()
     {
-        iceProjectileSpawned = Instantiate(iceProjectile, transform.position, transform.localRotation);
-        projectileInstantiated = true;
+        iceProjectileSpawned = Instantiate(iceProjectile, transform.position, Quaternion.identity);
+        iceProjectileSpawned.transform.GetChild(1).transform.rotation = transform.localRotation;
     }
 
     private void MoveIceProjectile()

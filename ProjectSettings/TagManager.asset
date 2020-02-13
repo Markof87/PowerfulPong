@@ -11,6 +11,7 @@ TagManager:
   - ActionIcon
   - BiggerPill
   - IcePill
+  - IceProjectile
   layers:
   - Default
   - TransparentFX
