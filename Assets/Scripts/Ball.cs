@@ -14,6 +14,15 @@ public class Ball : MonoBehaviour
     [SerializeField]
     private float initialVelocity = 5.0f;
 
+    [SerializeField]
+    private AudioClip[] hurtClips;
+
+    [SerializeField]
+    private AudioClip loseBallClip;
+
+    [SerializeField]
+    private GameObject explosion;
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -22,17 +31,12 @@ public class Ball : MonoBehaviour
         StartCoroutine(StartBall());
     }
 
-    private IEnumerator StartBall()
+    public bool IsMoving
     {
-        isMoving = false;
-        transform.position = Vector3.zero;
-        totalHit = 0;
-
-        yield return new WaitForSeconds(3f);
-
-        GameManager.instance.ToggleWinText(false);
-        AddForceBall();
-        isMoving = true;
+        get
+        {
+            return isMoving;
+        }
     }
 
     public void AddForceBall()
@@ -54,12 +58,17 @@ public class Ball : MonoBehaviour
         rb.AddForce(randomStart);
     }
 
-    public bool IsMoving
+    private IEnumerator StartBall()
     {
-        get
-        {
-            return isMoving;
-        }
+        isMoving = false;
+        transform.position = Vector3.zero;
+        totalHit = 0;
+
+        yield return new WaitForSeconds(3f);
+
+        GameManager.instance.ToggleWinText(false);
+        AddForceBall();
+        isMoving = true;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -79,6 +88,9 @@ public class Ball : MonoBehaviour
             if (other.gameObject.name == "BoundaryDown")
                 GameManager.instance.IncrementScore(GameManager.ScoreType.Down);
 
+            ReproduceLoseSound();
+            ExplodeBall(other.gameObject.GetComponent<Collider>().ClosestPointOnBounds(transform.position));
+
             rb.velocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
 
@@ -89,7 +101,7 @@ public class Ball : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        audioSource.Play();
+        ReproduceHurtSound();
 
         //On every collision I have to count the total amount. If i reach 4, 12 and 20 hits, my ball is more quick by a bit
         if(collision.gameObject.tag == "Paddle")
@@ -136,5 +148,24 @@ public class Ball : MonoBehaviour
     public Paddle GetLastHit()
     {
         return lastHit;
+    }
+
+    private void ExplodeBall(Vector3 explosionPosition)
+    {
+        GameObject explosionObject = Instantiate(explosion, explosionPosition, Quaternion.identity);
+        Destroy(explosionObject, 1.5f);
+        //explosion.GetComponent<ParticleSystem>().Play();
+    }
+
+    private void ReproduceHurtSound()
+    {
+        audioSource.PlayOneShot(hurtClips[Random.Range(0, hurtClips.Length)]);
+        audioSource.Play();
+    }
+
+    private void ReproduceLoseSound()
+    {
+        audioSource.PlayOneShot(loseBallClip);
+        audioSource.Play();
     }
 }

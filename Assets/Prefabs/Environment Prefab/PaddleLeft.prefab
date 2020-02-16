@@ -56,10 +56,11 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 93afa1ac03d2fd54580f6102c4316835, type: 2}
+  - {fileID: 2100000, guid: d1984623e699f13478302c4eaae8a981, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -105,4 +106,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d23f96438c2b349419b0048927d35d24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnActionBehaviour:
+    m_PersistentCalls:
+      m_Calls: []
   type: 1
+  speed: 20
+  speedProjectile: 50
+  ball: {fileID: 0}
+  iceProjectile: {fileID: 0}
+  actionIcon: {fileID: 0}

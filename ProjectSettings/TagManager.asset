@@ -12,6 +12,7 @@ TagManager:
   - BiggerPill
   - IcePill
   - IceProjectile
+  - PostProcessing
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Post-processing
   - 
   - 
   - 

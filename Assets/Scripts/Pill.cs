@@ -8,10 +8,14 @@ public class Pill : MonoBehaviour
     [SerializeField]
     private Sprite actionIconSprite;
 
+    [SerializeField]
+    private AudioClip triggerAudioClip;
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Paddle")
         {
+            AudioSource.PlayClipAtPoint(triggerAudioClip, Camera.main.transform.position);
             GameObject actionIcon = other.gameObject.GetComponent<Paddle>().GetActionIcon();
             actionIcon.GetComponent<Image>().sprite = actionIconSprite;
         }

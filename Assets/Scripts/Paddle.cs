@@ -16,15 +16,21 @@ public class Paddle : MonoBehaviour
 
     public PlayerType type;
     public int speed = 20;
-    public int speedProjectile = 50;
+    public float speedProjectile = 50;
 
-    private GameObject iceProjectileSpawned = null;
+    public bool canUseAction = true;
 
     [SerializeField]
     private Ball ball;
 
     [SerializeField]
     private GameObject iceProjectile;
+
+    [SerializeField]
+    private AudioClip shotProjectile;
+
+    [SerializeField]
+    private AudioClip useSuperSpeed;
 
     private void Start()
     {
@@ -57,9 +63,6 @@ public class Paddle : MonoBehaviour
                 AIPlayer();
                 break;
         }
-
-        if (iceProjectileSpawned)
-            MoveIceProjectile();
     }
 
     private void FirstPlayer(){
@@ -69,7 +72,7 @@ public class Paddle : MonoBehaviour
         if (Input.GetKey("s") && transform.position.y > -12f)
             transform.Translate(0, -speed * Time.deltaTime, 0);
 
-        if (Input.GetKey("e"))
+        if (Input.GetKey("e") && canUseAction)
             ActionBehaviour(); 
 
     }
@@ -80,7 +83,7 @@ public class Paddle : MonoBehaviour
         if (Input.GetKey("down") && transform.position.y > -12f)
             transform.Translate(0, -speed * Time.deltaTime, 0);
     
-        if (Input.GetKey(KeyCode.Return))
+        if (Input.GetKey(KeyCode.Return) && canUseAction)
             ActionBehaviour(); 
     }
     private void ThirdPlayer(){
@@ -129,37 +132,43 @@ public class Paddle : MonoBehaviour
 
     private void SpeedPillAction()
     {
+        AudioSource.PlayClipAtPoint(useSuperSpeed, Camera.main.transform.position);
         StartCoroutine(IncreaseSpeed());
     }
 
     private void IcePillAction()
     {
+        AudioSource.PlayClipAtPoint(shotProjectile, Camera.main.transform.position);
         ShotIceProjectile();
     }
 
     private IEnumerator IncreaseSpeed()
     {
+        GetComponent<Renderer>().material.SetColor("_Color", new Color(0.667f, 1, 0.278f));
         speed *= 2;
         yield return new WaitForSeconds(10f);
+        GetComponent<Renderer>().material.SetColor("_Color", new Color(1, 1, 1));
         speed /= 2;
     }
 
     private IEnumerator FreezePaddle()
     {
+        //Modify color material
+        GetComponent<Renderer>().material.SetColor("_Color", new Color(0, 0.639f, 1));
         speed = 0;
+        canUseAction = false;
         yield return new WaitForSeconds(5f);
+        GetComponent<Renderer>().material.SetColor("_Color", new Color(1, 1, 1));
         speed = 20;
+        canUseAction = true;
     }
 
     private void ShotIceProjectile()
     {
-        iceProjectileSpawned = Instantiate(iceProjectile, transform.position, Quaternion.identity);
-        iceProjectileSpawned.transform.GetChild(1).transform.rotation = transform.localRotation;
-    }
-
-    private void MoveIceProjectile()
-    {
-        iceProjectileSpawned.transform.Translate(transform.right * speedProjectile * Time.deltaTime);
+        Vector3 projectileSpawn = transform.position + (1.5f * transform.right);
+        GameObject projectile = Instantiate(iceProjectile, projectileSpawn, Quaternion.identity);
+        projectile.transform.GetChild(1).gameObject.transform.rotation = transform.localRotation;
+        projectile.GetComponent<Projectile>().speedProjectile = speedProjectile * transform.right.x;
     }
 
     [System.Serializable]

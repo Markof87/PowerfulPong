@@ -57,10 +57,11 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 4a5c93529fe2fe4418939d3a9a296841, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -109,6 +110,7 @@ MonoBehaviour:
   pills:
   - {fileID: 1872914072646159628, guid: 5c5f2949b53ca0e498e73faf8fbe715e, type: 3}
   - {fileID: 620235395121093168, guid: d7c3a22246ae8924d98877fb3f8358b9, type: 3}
+  destroyClip: {fileID: 8300000, guid: b45b4dbe464c76f41995f136eec6d136, type: 3}
   containerVelocity: 5
   containerDestroyPeriod: 10
 --- !u!54 &4638926107620687824

@@ -6,11 +6,18 @@ public class Container : MonoBehaviour
 {
     [SerializeField]
     private GameObject[] pills;
+
+    [SerializeField]
+    private AudioClip destroyClip;
+
     [SerializeField]
     private float containerVelocity;
-    private Vector3 containerDirection;
+
     [SerializeField]
     private float containerDestroyPeriod;
+
+    private Vector3 containerDirection;
+
     private float containerDestroyTime;
     private float containerDestroySelectedTime;
 
@@ -48,6 +55,7 @@ public class Container : MonoBehaviour
     {
         if(other.gameObject.tag == "Ball")
         {
+            AudioSource.PlayClipAtPoint(destroyClip, Camera.main.transform.position);
             Destroy(gameObject);
             GeneratePill(other.gameObject.GetComponent<Ball>().GetLastHit());
         }

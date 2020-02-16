@@ -76,7 +76,15 @@ public class GameManager : MonoBehaviour
     public void ToggleWinText(bool isActive)
     {
         if (winText.IsActive() != isActive)
+        {
+            if (scoreLeft == maxScore)
+                winText.text = "Player 1 Wins";
+            else if (scoreRight == maxScore)
+                winText.text = "Player 2 Wins";
+
             winText.gameObject.SetActive(isActive);
+
+        }
     }
 
     public void ResetGame()
