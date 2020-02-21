@@ -1,1 +1,2 @@
-*.ASP linguist-detectable=false
+* linguist-vendored
+*.asp linguist-vendored=false
