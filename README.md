@@ -109,7 +109,7 @@ $ bower install
 ## Author
 
 | <a href="http://fvcproductions.com" target="_blank">**FVCproductions**</a> |
-| :---: |:---:| :---:|
+| :---: |
 | [![Markof](https://avatars1.githubusercontent.com/u/4284691?v=3&s=200)](http://fvcproductions.com) |
 | <a href="https://github.com/Markof87" target="_blank">`github.com/Markof87`</a> |
 
