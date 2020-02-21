@@ -4,43 +4,19 @@
 
 ***INSERT GRAPHIC HERE (include hyperlink in image)***
 
-# Repository Title Goes Here
+# POWERFUL PONG
 
-> Subtitle or Short Description Goes Here
-
-> ideally one sentence
-
-> include terms/tags that can be searched
-
-**Badges will go here**
-
-- build status
-- issues (waffle.io maybe)
-- devDependencies
-- npm package
-- coverage
-- slack
-- downloads
-- gitter chat
-- license
-- etc.
-
-[![Build Status](http://img.shields.io/travis/badges/badgerbadgerbadger.svg?style=flat-square)](https://travis-ci.org/badges/badgerbadgerbadger) [![Dependency Status](http://img.shields.io/gemnasium/badges/badgerbadgerbadger.svg?style=flat-square)](https://gemnasium.com/badges/badgerbadgerbadger) [![Coverage Status](http://img.shields.io/coveralls/badges/badgerbadgerbadger.svg?style=flat-square)](https://coveralls.io/r/badges/badgerbadgerbadger) [![Code Climate](http://img.shields.io/codeclimate/github/badges/badgerbadgerbadger.svg?style=flat-square)](https://codeclimate.com/github/badges/badgerbadgerbadger) [![Github Issues](http://githubbadges.herokuapp.com/badges/badgerbadgerbadger/issues.svg?style=flat-square)](https://github.com/badges/badgerbadgerbadger/issues) [![Pending Pull-Requests](http://githubbadges.herokuapp.com/badges/badgerbadgerbadger/pulls.svg?style=flat-square)](https://github.com/badges/badgerbadgerbadger/pulls) [![Gem Version](http://img.shields.io/gem/v/badgerbadgerbadger.svg?style=flat-square)](https://rubygems.org/gems/badgerbadgerbadger) [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org) [![Badges](http://img.shields.io/:badges-9/9-ff6799.svg?style=flat-square)](https://github.com/badges/badgerbadgerbadger)
-
-- For more on these wonderful ~~badgers~~ badges, refer to <a href="http://badges.github.io/badgerbadgerbadger/" target="_blank">`badgerbadgerbadger`</a>.
+> A classic Pong game with a bit more nice assets!
 
 ***INSERT ANOTHER GRAPHIC HERE***
 
 [![INSERT YOUR GRAPHIC HERE](http://i.imgur.com/dt8AUb6.png)]()
 
-- Most people will glance at your `README`, *maybe* star it, and leave
-- Ergo, people should understand instantly what your project is about based on your repo
+- INSERT LITTLE DESCRIPTION
 
 > Tips
 
-- HAVE WHITE SPACE
-- MAKE IT PRETTY
-- GIFS ARE REALLY COOL
+- LIST OF TIPS
 
 > GIF Tools
 
@@ -64,26 +40,9 @@
 - [Installation](#installation)
 - [Features](#features)
 - [Contributing](#contributing)
-- [Team](#team)
-- [FAQ](#faq)
+- [Author](#author)
 - [Support](#support)
 - [License](#license)
-
-
----
-
-## Example (Optional)
-
-```javascript
-// code away!
-
-let generateProject = project => {
-  let code = [];
-  for (let js = 0; js < project.length; js++) {
-    code.push(js);
-  }
-};
-```
 
 ---
 
@@ -119,9 +78,6 @@ $ bower install
 ---
 
 ## Features
-## Usage (Optional)
-## Documentation (Optional)
-## Tests (Optional)
 
 - Going into more detail on code and technologies used
 - I utilized this nifty <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">Markdown Cheatsheet</a> for this sample `README`.
@@ -150,24 +106,14 @@ $ bower install
 
 ---
 
-## Team
+## Author
 
-> Or Contributors/People
-
-| <a href="http://fvcproductions.com" target="_blank">**FVCproductions**</a> | <a href="http://fvcproductions.com" target="_blank">**FVCproductions**</a> | <a href="http://fvcproductions.com" target="_blank">**FVCproductions**</a> |
+| <a href="http://fvcproductions.com" target="_blank">**FVCproductions**</a> |
 | :---: |:---:| :---:|
-| [![FVCproductions](https://avatars1.githubusercontent.com/u/4284691?v=3&s=200)](http://fvcproductions.com)    | [![FVCproductions](https://avatars1.githubusercontent.com/u/4284691?v=3&s=200)](http://fvcproductions.com) | [![FVCproductions](https://avatars1.githubusercontent.com/u/4284691?v=3&s=200)](http://fvcproductions.com)  |
-| <a href="http://github.com/fvcproductions" target="_blank">`github.com/fvcproductions`</a> | <a href="http://github.com/fvcproductions" target="_blank">`github.com/fvcproductions`</a> | <a href="http://github.com/fvcproductions" target="_blank">`github.com/fvcproductions`</a> |
+| [![Markof](https://avatars1.githubusercontent.com/u/4284691?v=3&s=200)](http://fvcproductions.com) |
+| <a href="https://github.com/Markof87" target="_blank">`github.com/Markof87`</a> |
 
-- You can just grab their GitHub profile image URL
 - You should probably resize their picture using `?s=200` at the end of the image URL.
-
----
-
-## FAQ
-
-- **How do I do *specifically* so and so?**
-    - No problem! Just do this.
 
 ---
 
@@ -181,18 +127,8 @@ Reach out to me at one of the following places!
 
 ---
 
-## Donations (Optional)
-
-- You could include a <a href="https://cdn.rawgit.com/gratipay/gratipay-badge/2.3.0/dist/gratipay.png" target="_blank">Gratipay</a> link as well.
-
-[![Support via Gratipay](https://cdn.rawgit.com/gratipay/gratipay-badge/2.3.0/dist/gratipay.png)](https://gratipay.com/fvcproductions/)
-
-
----
-
 ## License
 
-[![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
+[![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](https://github.com/Markof87/PowerfulPong/blob/master/LICENSE)
 
 - **[MIT license](http://opensource.org/licenses/mit-license.php)**
-- Copyright 2015 © <a href="http://fvcproductions.com" target="_blank">FVCproductions</a>.
