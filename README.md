@@ -108,7 +108,7 @@ $ bower install
 
 ## Author
 
-| <a href="http://fvcproductions.com" target="_blank">**FVCproductions**</a> |
+| <a href="http://markof.com" target="_blank">**Markof**</a> |
 | :---: |
 | [![Markof](https://avatars1.githubusercontent.com/u/4284691?v=3&s=200)](http://fvcproductions.com) |
 | <a href="https://github.com/Markof87" target="_blank">`github.com/Markof87`</a> |
@@ -121,8 +121,8 @@ $ bower install
 
 Reach out to me at one of the following places!
 
-- Website at <a href="http://fvcproductions.com" target="_blank">`fvcproductions.com`</a>
-- Twitter at <a href="http://twitter.com/fvcproductions" target="_blank">`@fvcproductions`</a>
+- Website at <a href="http://markof.com" target="_blank">`markof.com`</a>
+- Twitter at <a href="http://twitter.com/markof" target="_blank">`@markof`</a>
 - Insert more social links here.
 
 ---
