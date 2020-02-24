@@ -47,7 +47,7 @@
 ## Installation
 
 - If you only want to test my little game, please download this following subfolder <a href="https://github.com/Markof87/PowerfulPong/tree/master/PowerfulPong_Build" target="_blank">`https://github.com/Markof87/PowerfulPong/tree/master/PowerfulPong_Build`</a>
-- If you want to modify, improve, fix, whatever you want, the entire project, clone this project and use <a href="https://unity.com/">Unity*</a> to open it, ignoring `PowerfulPong_Build` folder if you want
+- If you want to modify, improve, fix, whatever you want, the entire project, clone this project and use <a href="https://unity.com/" target="_blank">Unity*</a> to open it, ignoring `PowerfulPong_Build` folder if you want
 
 *this project is updated on Unity 2019 version, but you can use it with 2017 versions and above.
 
@@ -59,8 +59,11 @@
 
 ## Features
 
-- Going into more detail on code and technologies used
-- I utilized this nifty <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">Markdown Cheatsheet</a> for this sample `README`.
+- As I said before, this project is developed with Unity 2019 version. It's a very simple 2.5D project with most of the components builded from Unity basics 3D meshes
+- There is a bit of graphic improvements with Unity Post-Processing Stack. This is absolutely an habit, but I think it gives a nice touch on all the global visual impact
+- Textures are free assets from `<a href="https://www.textures.com/" target="_blank">textures.com</a>`
+- GUI Icons come from this pack that I bought from HumbleBundle: `<a href="https://www.gamedevmarket.net/asset/gui-icons-8656/" target="_blank">https://www.gamedevmarket.net/asset/gui-icons-8656/</a>`
+- I also utilized this nifty <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">Markdown Cheatsheet</a> for this `README`
 
 ---
 
