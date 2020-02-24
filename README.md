@@ -61,8 +61,8 @@
 
 - As I said before, this project is developed with Unity 2019 version. It's a very simple 2.5D project with most of the components builded from Unity basics 3D meshes
 - There is a bit of graphic improvements with Unity Post-Processing Stack. This is absolutely an habit, but I think it gives a nice touch on all the global visual impact
-- Textures are free assets from `<a href="https://www.textures.com/" target="_blank">textures.com</a>`
-- GUI Icons come from this pack that I bought from HumbleBundle: `<a href="https://www.gamedevmarket.net/asset/gui-icons-8656/" target="_blank">https://www.gamedevmarket.net/asset/gui-icons-8656/</a>`
+- Textures are free assets from <a href="https://www.textures.com/" target="_blank">`textures.com`</a>
+- GUI Icons come from this pack that I bought from HumbleBundle: <a href="https://www.gamedevmarket.net/asset/gui-icons-8656/" target="_blank">`https://www.gamedevmarket.net/asset/gui-icons-8656/`</a>
 - I also utilized this nifty <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">Markdown Cheatsheet</a> for this `README`
 
 ---
