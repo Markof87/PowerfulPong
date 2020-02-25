@@ -1,35 +1,18 @@
-<a href="http://fvcproductions.com"><img src="https://avatars1.githubusercontent.com/u/4284691?v=3&s=200" title="FVCproductions" alt="FVCproductions"></a>
-
-<!-- [![FVCproductions](https://avatars1.githubusercontent.com/u/4284691?v=3&s=200)](http://fvcproductions.com) -->
-
-***INSERT GRAPHIC HERE (include hyperlink in image)***
+<a href="https://markof.com"><img src="https://i.imgur.com/0DFNIi4.png" title="PowerfulPong" alt="Powerful Pong"></a>
 
 # POWERFUL PONG
 
 > A classic Pong game with a bit more nice assets!
 
-***INSERT ANOTHER GRAPHIC HERE***
-
-[![INSERT YOUR GRAPHIC HERE](http://i.imgur.com/dt8AUb6.png)]()
+<img src="https://g.recordit.co/rXUo0wUSnu.gif"/>
 
 - INSERT LITTLE DESCRIPTION
+
+<img src="http://g.recordit.co/7DDYTucHh0.gif"/>
 
 > Tips
 
 - LIST OF TIPS
-
-> GIF Tools
-
-- Use <a href="http://recordit.co/" target="_blank">**Recordit**</a> to create quicks screencasts of your desktop and export them as `GIF`s.
-- For terminal sessions, there's <a href="https://github.com/chjj/ttystudio" target="_blank">**ttystudio**</a> which also supports exporting `GIF`s.
-
-**Recordit**
-
-![Recordit GIF](http://g.recordit.co/iLN6A0vSD8.gif)
-
-**ttystudio**
-
-![ttystudio GIF](https://raw.githubusercontent.com/chjj/ttystudio/master/img/example.gif)
 
 ---
 
