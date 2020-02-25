@@ -4,9 +4,7 @@
 
 > A classic Pong game with a bit more nice assets!
 
-***INSERT ANOTHER GRAPHIC HERE***
-
-[![INSERT YOUR GRAPHIC HERE](http://i.imgur.com/dt8AUb6.png)]()
+![Recordit GIF](http://g.recordit.co/rXUo0wUSnu.gif)
 
 - INSERT LITTLE DESCRIPTION
 
@@ -21,7 +19,7 @@
 
 **Recordit**
 
-![Recordit GIF](http://g.recordit.co/iLN6A0vSD8.gif)
+
 
 **ttystudio**
 
