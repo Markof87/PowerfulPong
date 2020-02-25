@@ -4,11 +4,11 @@
 
 > A classic Pong game with a bit more nice assets!
 
-<img src="https://g.recordit.co/rXUo0wUSnu.gif"/>
+![](7DDYTucHh0.gif)
 
 - INSERT LITTLE DESCRIPTION
 
-<img src="http://g.recordit.co/7DDYTucHh0.gif"/>
+![](rXUo0wUSnu.gif)
 
 > Tips
 
