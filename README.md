@@ -4,11 +4,11 @@
 
 > A classic Pong game with a bit more nice assets!
 
-![](7DDYTucHh0.gif)
+![Alt Text](https://media.giphy.com/media/U2QnZCNIQdSLM0kgKi/giphy.gif)
 
 - INSERT LITTLE DESCRIPTION
 
-![](rXUo0wUSnu.gif)
+![Alt Text](https://media.giphy.com/media/Q8yA0JawZJ5ElWczP9/giphy.gif)
 
 > Tips
 
