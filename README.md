@@ -35,8 +35,6 @@
 
 ## Table of Contents (Optional)
 
-> If your `README` has a lot of info, section headers might be nice.
-
 - [Installation](#installation)
 - [Features](#features)
 - [Contributing](#contributing)
@@ -48,39 +46,24 @@
 
 ## Installation
 
-- All the `code` required to get started
-- Images of what it should look like
+- If you only want to test my little game, please download this following subfolder <a href="https://github.com/Markof87/PowerfulPong/tree/master/PowerfulPong_Build" target="_blank">`https://github.com/Markof87/PowerfulPong/tree/master/PowerfulPong_Build`</a>
+- If you want to modify, improve, fix, whatever you want, the entire project, clone this project and use <a href="https://unity.com/" target="_blank">Unity*</a> to open it, ignoring `PowerfulPong_Build` folder if you want
+
+*this project is updated on Unity 2019 version, but you can use it with 2017 versions and above.
 
 ### Clone
 
-- Clone this repo to your local machine using `https://github.com/fvcproductions/SOMEREPO`
-
-### Setup
-
-- If you want more syntax highlighting, format your code like this:
-
-> update and install this package first
-
-```shell
-$ brew update
-$ brew install fvcproductions
-```
-
-> now install npm and bower packages
-
-```shell
-$ npm install
-$ bower install
-```
-
-- For all the possible languages that support syntax highlithing on GitHub (which is basically all of them), refer <a href="https://github.com/github/linguist/blob/master/lib/linguist/languages.yml" target="_blank">here</a>.
+- Clone this repo to your local machine using `https://github.com/Markof87/PowerfulPong.git`
 
 ---
 
 ## Features
 
-- Going into more detail on code and technologies used
-- I utilized this nifty <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">Markdown Cheatsheet</a> for this sample `README`.
+- As I said before, this project is developed with Unity 2019 version. It's a very simple 2.5D project with most of the components builded from Unity basics 3D meshes
+- There is a bit of graphic improvements with Unity Post-Processing Stack. This is absolutely an habit, but I think it gives a nice touch on all the global visual impact
+- Textures are free assets from <a href="https://www.textures.com/" target="_blank">`textures.com`</a>
+- GUI Icons come from this pack that I bought from HumbleBundle: <a href="https://www.gamedevmarket.net/asset/gui-icons-8656/" target="_blank">`https://www.gamedevmarket.net/asset/gui-icons-8656/`</a>
+- I also utilized this nifty <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">Markdown Cheatsheet</a> for this `README`
 
 ---
 
@@ -94,7 +77,7 @@ $ bower install
     - 🍴 Fork this repo!
 
 - **Option 2**
-    - 👯 Clone this repo to your local machine using `https://github.com/joanaz/HireDot2.git`
+    - 👯 Clone this repo to your local machine using `https://github.com/Markof87/PowerfulPong.git`
 
 ### Step 2
 
@@ -102,28 +85,22 @@ $ bower install
 
 ### Step 3
 
-- 🔃 Create a new pull request using <a href="https://github.com/joanaz/HireDot2/compare/" target="_blank">`https://github.com/joanaz/HireDot2/compare/`</a>.
+- 🔃 Create a new pull request using <a href="https://github.com/Markof87/PowerfulPong/compare/" target="_blank">`https://github.com/Markof87/PowerfulPong/compare/`</a>.
 
 ---
 
 ## Author
 
-| <a href="http://markof.com" target="_blank">**Markof**</a> |
+| <a href="https://markof.com" target="_blank">**Markof**</a> |
 | :---: |
-| [![Markof](https://avatars1.githubusercontent.com/u/4284691?v=3&s=200)](http://fvcproductions.com) |
+| [![Markof](https://avatars3.githubusercontent.com/u/14056100?s=200)](https://markof.com) |
 | <a href="https://github.com/Markof87" target="_blank">`github.com/Markof87`</a> |
-
-- You should probably resize their picture using `?s=200` at the end of the image URL.
 
 ---
 
 ## Support
 
-Reach out to me at one of the following places!
-
-- Website at <a href="http://markof.com" target="_blank">`markof.com`</a>
-- Twitter at <a href="http://twitter.com/markof" target="_blank">`@markof`</a>
-- Insert more social links here.
+**UNDER CONSTRUCTION** 🔨🔨🔨
 
 ---
 
