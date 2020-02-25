@@ -6,13 +6,22 @@
 
 ![Alt Text](https://media.giphy.com/media/U2QnZCNIQdSLM0kgKi/giphy.gif)
 
-- INSERT LITTLE DESCRIPTION
+- This is a little improving test on a classic <a href="https://upload.wikimedia.org/wikipedia/commons/f/f8/Pong.png">Pong</a> game
+- Add a bit of juicy graphics and post-effects
+- Every n seconds (randomly) a little container spanws on screen. You can hit it with the ball and try to get the magic pill generated from it
+- Two kind of pills: super-speed and ice projectile
+- Super-speed improves your speed twice for a period of time
+- If you hit the opponent with the ice projectile, he'll freeze for few seconds
 
 ![Alt Text](https://media.giphy.com/media/Q8yA0JawZJ5ElWczP9/giphy.gif)
 
 > Tips
 
-- LIST OF TIPS
+- This project is complete, but is only a pattern you should use like a base to develop
+- You can introduce a loop game (and, consequently, a game state machine) and an exit game system, instead of this brutal ALT-F4!
+- You can create more than these pre-existing two pills, with other various effect (accelerate or slow ball, shield, "confusing" projectile that invert input for a period of time etc...)
+- You can include more than two players, or substitute second human player with a more or less complex AI
+- Of course you can also further improve graphics and sounds! This project has some quite cute VFX, but you can do MORE better!
 
 ---
 
